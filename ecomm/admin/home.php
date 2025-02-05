@@ -36,6 +36,16 @@
 }
 </style>
 </head>
+
+<?php
+    session_start();
+    if(!$_SESSION['admin'])
+    {
+        header("location:admin.login.php");
+    }
+
+?>
+
 <body>
     <div>
         <header>
@@ -58,14 +68,10 @@
                         <li><a href="">ABOUT US</a></li>
                     </ul>
                 
-                <!-- <div class="searchBar">
-                    <input type="text" placeholder="Search for instruments" id="search">
-                    <button onclick="searchInstrument()">Search</button> -->
+                
 
                 <div class="login">
-                   <!-- <div class="searchcart"><input type="text" placeholder="Search instruments"></div> -->
-                   <!-- <button class="btn">🔍</button> 
-                    <button class="btn">🛒</button> -->
+                   
             <i class="fa-solid fa-user-tie ">  Admin </i>
 
                     <!-- Admin |  -->
@@ -73,7 +79,7 @@
                     <a href="signUp.html">UserPanel</a>
             <i class="fa-solid fa-right-from-bracket"></i>
 
-                    <a href="login.html">LOG out</a>
+                    <a href="admin.logout.php">log out</a>
                     <a href=""></a>
                 </div>
             </nav>
