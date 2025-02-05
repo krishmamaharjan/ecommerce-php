@@ -55,15 +55,20 @@
 
 
     <?php
+
+
+    
     if(isset($_POST['login']))
     {
         $Admin_name = $_POST['username'];
         $Admin_password = $_POST['userpassword'];
 
         $result = mysqli_query($con,"SELECT * FROM `admin` WHERE username = '$Admin_name' AND userpassword = '$Admin_password'");
+        session_start();
 
         if(mysqli_num_rows($result))
         {
+            $_SESSION['admin']=$Admin_name;
             echo "
             <script>
                 alert('login Successfully');
