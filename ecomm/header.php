@@ -38,7 +38,8 @@
 
                    <!-- <div class="searchcart"><input type="text" placeholder="Search instruments"></div> -->
                    <!-- <button class="btn">🔍</button>  -->
-                    <i class="fa-solid fa-cart-arrow-down"></i> 
+                    <i class="fa-solid fa-cart-arrow-down">&nbsp cart</i> 
+                    
 
                     <a href="signUp.html">SIGN UP</a>
                     <a href="login.html">LOG IN</a>
