@@ -1,166 +1,153 @@
 <?php
-include 'product.php';
+        // include 'connection.config.php';
 
-?>
+            // $record = mysqli_query($con, "SELECT * FROM product");
+            // while($row = mysqli_fetch_array($record))
+            // {
+            //     echo "            
+            //                 <div class='product'>
+            //                         <img src='admin/product/$row[Pimage]' alt='Guitar'>
+            //                     <h2>$row[Pname]</h2>
+            //                         <p>Price: $row[Pprice]</p>
+            //                         <p>Details:</p><br>                                
+            //                         <p></p>                                
+            //                         <input type='submit' name='submit'class='btn' value='Add to cart'>                                
+            //                 </div>
+                    
+            //        ";
+            // }
+
+
+            // if (isset($_GET['id'])) {
+            //     $id = $_GET['id'];
+            //     $query = mysqli_query($con, "SELECT * FROM product WHERE id = '$id'");
+            //     $product = mysqli_fetch_assoc($query);
+            // } else {
+            //     echo "Product not found!";
+            //     exit();
+            // }
+
+
+ ?> 
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dream Maker UK21 - Product Page</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <title>Buy Product</title>
+    <?php
+        include 'header.php';
+    ?>
 
-    <style>
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f8f8f8;
-}
-
-.product-container {
-    display: flex;
-    justify-content: center;
-    max-width: 800px;
-    background: white;
-    padding: 20px;
+<style>
+    
+    .product {
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f6ee;
 }
 
-.product-image img {
-    max-width: 250px;
-    border-radius: 10px;
+.product img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
 }
 
-.product-details {
-    margin-left: 20px;
-}
-
-h2 {
-    font-size: 24px;
-    margin: 0;
-}
-
-.price {
-    font-size: 20px;
-    color: #333;
+.product a {
+    text-decoration: none;
+    color: brown;
     font-weight: bold;
 }
 
-.shipping {
-    font-size: 14px;
-    color: gray;
-}
-
-.quantity {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-}
-
-.qty-btn {
-    background: #ddd;
-    border: none;
-    padding: 5px 10px;
-    font-size: 18px;
-    cursor: pointer;
-    z-index: 10;
-}
-.quantity input { 
-    width: 50px; 
-    text-align: center;
-    font-size: 16px; 
-    padding: 5px; 
-}
-
-input[type="number"] {
-    width: 50px;
-    text-align: center;
-    margin: 0 5px;
-}
-
-.add-to-cart, .buy-now {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
+.details-btn {
+    display: block;
     margin-top: 10px;
-    border: none;
-    cursor: pointer;
-}
-
-.add-to-cart {
-    background: white;
-    border: 2px solid black;
-}
-
-.buy-now {
-    background: black;
+    background-color: brown;
     color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
-.description {
-    margin-top: 15px;
-    font-size: 14px;
+.product-details {
+    text-align: center;
+    margin: auto;
+    max-width: 600px;
 }
 
-    </style>
+.product-details img {
+    max-width: 100%;
+    height: auto;
+}
 
+    
+</style>
 
-<?php
-include'header.php';
-?>
 </head>
 <body>
+    <div class="container">
 
-<div class="product-container">
-        <div class="product-image">
-            <img src="admin/product/<?php echo $product['Pimage']; ?>" alt="<?php echo $product['Pname']; ?>">
-        </div>
-        <div class="product-details">
-            <h2><?php echo $product['Pname']; ?></h2>
-            <p class="price">Rs<?php echo number_format($product['Pprice'], 2); ?></p>
-            <p class="shipping">Shipping calculated at checkout.</p>
+    <?php
+    
+    include 'connection.config.php';
 
-             <!-- Quantity Selector -->
-             <div class="quantity">
-    <button type="button" class="qty-btn" onclick="changeQuantity(-1)">-</button>
-    <input type="number" id="quantity" value="1" readonly>
-    <button type="button" class="qty-btn" onclick="changeQuantity(1)">+</button>
-</div>
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $query = mysqli_query($con, "SELECT * FROM product WHERE id = '$id'");
 
-            <button class="add-to-cart">Add to cart</button>
-            <button class="buy-now">Buy it now</button>
-
-            <p class="description">
-                <?php echo $product[Pdetail]; ?>
-            </p>
-            <?php
-            // echo "Image Path: .$product[Pimage]";?>
-            
-        </div>
-</div>
+        if ($query && mysqli_num_rows($query) > 0) {
+            $product = mysqli_fetch_assoc($query);
+        } else {
+            echo "Product not found!";
+            exit();
+        }
+    } else {
+        echo "No product selected!";
+        exit();
+    }
 
 
-<script defer>
+
+            echo "
+                <div class='product-details'>
+                    <img src='admin/product/$product[Pimage]' alt=''>
+                
+                
+                    <h1>$product[Pname]</h1>    
+                    <p class='price'>Rs $product[Pprice]<p>
+                    <p> Description : $product[Pdetail]<p>
+
+                    <form action='InsertCart.php' method='POST'>
+                        <input type='hidden' name='product_id' value='$product[id]'>
+                        <input type='number' name='Pquantity' value='1' min='1'>
+                        <button type='submit' name='addCart'>Add to Cart</button>
+                        <button type='submit' name='buynow'>Buy Now</button>
+
+                    </form>
+                </div>
+                
+            ";
+                    // <button class='btn cart'>Add to cart</button>
+                    // <button class='btn buy'>Buy it now</button>
+        ?>
+    </div>
+
+
+    <!-- <script>
     function changeQuantity(amount) {
-        console.log("clicked");
         let quantityInput = document.getElementById("quantity");
-        let currentQuantity = parseInt(quantityInput.value) || 1;  // Ensure valid number
+        let currentQuantity = parseInt(quantityInput.value);
         let newQuantity = currentQuantity + amount;
-        
-        if (newQuantity >= 1) {
+        if (newQuantity > 0) {
             quantityInput.value = newQuantity;
         }
-    }
+    } -->
 </script>
-
-
 </body>
 </html>
