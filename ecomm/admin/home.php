@@ -87,7 +87,7 @@
 
 
             <div class="product-nav">
-                <a href="product/index.php">Add Products</a>
+                <a href="product/index.product.php">Add Products</a>
                 <a href="">Users</a>
             </div>
         
