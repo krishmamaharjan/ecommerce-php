@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>User Login</title>
     <!-- <link rel="stylesheet" href="Prac2/login.css" type="text/css"> -->
     <link rel="stylesheet" href="login.css">
 </head>
@@ -11,7 +11,7 @@
     <div class="container">
         <div class="box form-box">
             <header>Login</header><br>
-            <form action="" method="post">
+            <form action="login1.php" method="post">
                 <div class="field input">
                     <label for="username">Username</label>
                     <input type="text" name="username" id="username" required>
@@ -26,7 +26,7 @@
                 </div>
                 
                 <div class="links">
-                    Don't have an account? <a href="signUp.html">SignUp Now</a>
+                    Don't have an account? <a href="signUp.php">SignUp Now</a>
                 </div>
 
             </form>
@@ -34,3 +34,9 @@
     </div>
 </body>
 </html>
+
+<!-- 
+    abcd   ps-> #12345678 
+    abcde ps-> !12345678
+ 
+-->
