@@ -7,7 +7,7 @@
 
     <title>Home-page</title>
     <?php
-    include 'include/header.php';
+    include 'header.php';
     ?>
 
     <style>
@@ -27,62 +27,57 @@
     </style>
 </head>
 <body>
+
+<!-- <br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br> -->
     
-<!-- <div class="new-arrival"> -->
+
+<!-- <div class='container' id='shop'> -->
     <?php
         // include 'connection.config.php';
         // $record = mysqli_query($con, "SELECT * FROM product");
+
         //     while($row = mysqli_fetch_array($record))
         //     {
-        //         $check_page = $row['pages'];
-        //         if($check_page === 'Home')
-        //         {
+        //         // $check_page = $row['Category'];
+        //         // if($check_page === 'guitar')
+        //         // {             
+        //         // <a href=""></a>
+        //             echo "
 
-                
-                // <a href=""></a>
+        //             <a href=''>              
+        //                     <div class='product'>
+        //                             <img src='admin/product/$row[Pimage]' alt='Guitar'>
+        //                         <h2>$row[Pname]</h2>
+        //                             <p>Price: $row[Pprice]</p>                                
+        //                             <input type='submit' name='submit'class='btn' value='Add to cart'>                                
+        //                     </div>
+        //             </a>
+        //            ";
 
-
-                    // echo "
-
-                    // <a href='BuyProduct.php'>
-                    // <div class='container' id='shop'>
-
-                    // <form action = 'InsertCart' method = 'POST' >
-                    //         <div class='product'>
-                    //             <img src='admin/product/$row[Pimage]' alt='Guitar'>
-                    //         <h2>$row[Pname]</h2>
-                    //             <p>Price: $row[Pprice]</p>
-                                
-                    //             <input type='submit' name='submit'class='btn' value='Add to cart'>
-                                
-
-                                
-                    //         </div>
-                    // </form>
-                    // </div> 
-                    // </a>
-
-
-                    // ";
-
-                    // echo "Image Path: admin/product/.$row[Pimage]";
-                // }
-
-            // }
-                
-
+        //             // echo "Image Path: admin/product/.$row[Pimage]";
+        //         }
+        //     // }
     ?>
-</div>
+<!-- </div>  -->
+
 
 
 
 
 <div class="section new-arrivals">
     <h3>New Arrivals</h3>
+    <?php
+        include 'include/new-arrivals.php';
+    ?>
 </div>
 
 <div class="section best-selling-product">
     <h3>Best Selling Products</h3>
+    <?php
+        include 'include/best-selling-product.php';
+    ?>
 </div>
 
 <div class="section browse-by-category">
