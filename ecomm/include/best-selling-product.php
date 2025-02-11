@@ -1,4 +1,4 @@
-<div class='container' id='shop'>
+<div class='container'>
     <?php
         include 'connection.config.php';
         $record = mysqli_query($con, "SELECT * FROM product");
@@ -11,12 +11,20 @@
                 // <a href=""></a>
                     echo "
 
-                    <a href=''>              
+                    <a href='/ecommerce/ecomm/BuyProduct.php?id={$row['id']}'>              
                             <div class='product'>
                                     <img src='admin/product/$row[Pimage]' alt='Guitar'>
                                 <h2>$row[Pname]</h2>
-                                    <p>Price: $row[Pprice]</p>                                
-                                    <input type='submit' name='submit'class='btn' value='Add to cart'>                                
+                                    <p>Price: $row[Pprice]</p>  
+                        <form action = 'InsertCart.php' method = 'POST'>
+                                                              
+                                    <input type='hidden' name='Pquantity' value='1' min='1'>
+
+                                    <input type = 'hidden' name = 'Pname' value = '$row[Pname]'>
+                                    <input type = 'hidden' name = 'Pprice' value = '$row[Pprice]'>
+                                    <input type='submit' name='addCart'class='btn' value='Add to cart'>                                
+                        </form>
+                            
                             </div>
                     </a>
                    ";
