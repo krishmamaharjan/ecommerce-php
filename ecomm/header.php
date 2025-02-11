@@ -130,10 +130,25 @@ footer a:hover {
                     <a href="viewCart.php">
                     <i class="fa-solid fa-cart-arrow-down">&nbsp cart(<?php echo $count   ?>)</i> 
                     </a>
-
-                    <a href="signUp.html">SIGN UP</a>
-                    <a href="login.html">LOG IN</a>
                     <i class="fa-solid fa-circle-user"></i>
+
+                    <?php
+                    if(isset($_SESSION['username']))
+                    {
+                        echo $_SESSION['username'];
+                        echo "
+                                <a href='logout.php'>LOGOUT</a>
+
+                             ";
+                    }
+                    else
+                    {
+                        echo "
+                                <a href='signUp.php'>SIGN UP</a>
+                                <a href='login.php'>LOG IN</a>
+                            ";
+                    }
+                    ?>
                 </div>
             </nav>
             </div>
