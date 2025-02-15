@@ -111,8 +111,8 @@
         echo "No product selected!";
         exit();
     }
-
-
+    // <a href='InsertCart.php'></a>
+    // <form action = 'InsertCart.php' method = 'POST'>
 
             echo "
                 <div class='product-details'>
@@ -125,11 +125,15 @@
 
                     <form action='InsertCart.php' method='POST'>
                         <input type='hidden' name='product_id' value='$product[id]'>
+                        <input type = 'hidden' name = 'Pname' value = '$product[Pname]'>
+                        <input type = 'hidden' name = 'Pprice' value = '$product[Pprice]'>
+
                         <input type='number' name='Pquantity' value='1' min='1'>
-                        <button type='submit' name='addCart'>Add to Cart</button>
-                        <button type='submit' name='buynow'>Buy Now</button>
+                        <button type='submit' name='addCart' class='btn'>Add to Cart</button>
 
                     </form>
+                        <a href=''><button type='submit' name='buynow' class='btn'>Buy Now</button></a>
+
                 </div>
                 
             ";
