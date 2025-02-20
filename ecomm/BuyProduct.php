@@ -130,28 +130,30 @@
 
                         <input type='number' name='Pquantity' value='1' min='1'>
                         <button type='submit' name='addCart' class='btn'>Add to Cart</button>
+                        
+                        
+                        
+                    </form>";
+                    include 'esewa/esewa.index.php'; 
+                        
+                    echo "
 
-                    </form>
-                        <a href=''><button type='submit' name='buynow' class='btn'>Buy Now</button></a>
+                    
 
                 </div>
+
                 
             ";
+            // <a href='esewa.index.php'><button type='submit' name='buynow' class='btn'>Buy Now</button></a>
+
+            
                     // <button class='btn cart'>Add to cart</button>
                     // <button class='btn buy'>Buy it now</button>
         ?>
     </div>
 
 
-    <!-- <script>
-    function changeQuantity(amount) {
-        let quantityInput = document.getElementById("quantity");
-        let currentQuantity = parseInt(quantityInput.value);
-        let newQuantity = currentQuantity + amount;
-        if (newQuantity > 0) {
-            quantityInput.value = newQuantity;
-        }
-    } -->
+   
 </script>
 </body>
 </html>
