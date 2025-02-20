@@ -60,7 +60,7 @@
                 </div>
                 
                 <ul>
-                    <li><a href="index.html">HOME</a></li> 
+                    <li><a href="index.php">HOME</a></li> 
                         <li><a href="">SHOP</a></li>
                         <li><a href="">DEPARTMENT</a></li>
                         <li><a href="">BRAND</a></li>
@@ -76,7 +76,7 @@
 
                     <!-- Admin |  -->
 
-                    <a href="signUp.html">UserPanel</a>
+                    <a href="../index.php">UserPanel</a>
             <i class="fa-solid fa-right-from-bracket"></i>
 
                     <a href="admin.logout.php">log out</a>
@@ -88,7 +88,7 @@
 
             <div class="product-nav">
                 <a href="product/index.product.php">Add Products</a>
-                <a href="">Users</a>
+                <a href="user.php">Users</a>
             </div>
         
         
