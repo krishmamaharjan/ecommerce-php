@@ -39,7 +39,7 @@
     </div>
 </footer>
 
-<!-- Styles for Footer (Optional, can be added in a separate CSS file) -->
+
 <style>
     /* General Footer Styling */
     footer {
@@ -82,16 +82,7 @@
         margin-top: 20px;
     }
 
-    /* Ensure Footer is always at the bottom */
-    html, body {
-        height: 100%;
-        margin: 0;
-    }
 
-    body {
-        display: flex;
-        flex-direction: column;
-    }
 
     .footer-container {
         margin-top: auto;
