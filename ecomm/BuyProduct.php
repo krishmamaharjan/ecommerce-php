@@ -134,10 +134,17 @@
                         
                         
                     </form>";
-                    include 'esewa/esewa.index.php'; 
+                    // include 'esewa/esewa.index.php'; 
+    
                         
                     echo "
+                    <form action='stripe/checkout.php' method='post'>
+                    <input class='btn' value='Buy Product' type='submit'>
+                    <input class='btn' value='$product[Pname]' name = 'product_name' type='hidden'>
+                    <input class='btn' value='$product[Pprice]' name = 'product_price' type='hidden'>
+                    <input type='hidden' name='product_quantity' value=' ".(isset($_POST["Pquantity"]) ? $_POST["Pquantity"] : 1) ." '>
 
+                    </form>
                     
 
                 </div>
