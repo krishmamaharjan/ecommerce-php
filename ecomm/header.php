@@ -116,7 +116,7 @@ footer a:hover {
                         </li>
                         <!-- <li><a href="">BRAND</a></li> -->
                         <!-- <li><a href="">Rentals</a></li> -->
-                        <li><a href="">ABOUT US</a></li>
+                        <li><a href="AboutUs.php">ABOUT US</a></li>
                     </ul>
                 
                 <!-- <div class="searchBar">
