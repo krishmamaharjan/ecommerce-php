@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $name = trim($_POST['username']);
     $password = trim($_POST['password']);
 
-      // Prepare and execute statement
+    
       $stmt = $con->prepare("SELECT password FROM users WHERE username = ?");
       $stmt->bind_param("s", $name);
       $stmt->execute();
@@ -16,8 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
       $stmt->fetch();
       $stmt->close();
 
-  
-      // Verify password
+      
       if ($hashed_password && password_verify($password, $hashed_password)) {
 
         $_SESSION["username"] = $name;

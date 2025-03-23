@@ -95,16 +95,51 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         
         
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-            $query = mysqli_query($conn,"Insert into users(username,password,email) Values('$username','$hashed_password','$email')");
+
+            $Dup_Email = mysqli_query($conn,"SELECT * FROM `users` WHERE email = '$email'");
+            $Dup_username = mysqli_query($conn,"SELECT * FROM `users` WHERE username = '$username'");
+
+            if(mysqli_num_rows($Dup_Email))
+            {
+                echo "
+                <script>
+                    alert('This email is already taken');
+                    window.location.href='signUp.php';
+                </script>
+                ";
+            }
+
+            if(mysqli_num_rows($Dup_username))
+            {
+                echo "
+                <script>
+                    alert('This username is already taken');
+                    window.location.href='signUp.php';
+                </script>
+                ";
+            }
+            else{
+                $query = mysqli_query($conn,"Insert into users(username,password,email) Values('$username','$hashed_password','$email')");
+
+            }
+
             if($query)
             {
                 
-                echo "<script>alert('Data inserted Successfully')</script>";
+                echo "
+                <script>
+                alert('Data inserted Successfully');
+                window.location.href = 'login.php';
+                
+                </script>";
             }
             else{
                 
-                echo "<script>alert(error)</script>";
+                echo "<script>alert(error);
+                window.location.href = 'SignUp.php';
+                </script>";
             }
+
         }
     }    
     
@@ -195,7 +230,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                 </div>
                 
                 <div class="links">
-                    Already have an account? <a href="login.html">Login</a>
+                    Already have an account? <a href="login.php">Login</a>
                 </div>
 
             </form>
@@ -209,3 +244,5 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
 
 ?>
+
+<!-- abcd   ps-> #12345678 -->

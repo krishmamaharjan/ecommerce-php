@@ -1,5 +1,6 @@
 <?php
     include 'connection.config.php';
+    // include '../home.php';
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +60,16 @@
                         <option selected value="Home">Home</option>
                         <option value="Guitar">Guitar</option>
                         <option value="Drum">Drum</option>
+                        <option value="Flute">Flute</option>
                         <option value="KeyBoard">keyBoard</option>
+                        <option value="harmonium">Harmonium</option>
+                        <option value="sarangi">Sarangi</option>
+                        <option value="violin">Violin</option>
+                        <option value="eastern">Eastern</option>
+                        <option value="western">Western</option>
+                        <option value="new-arrivals">new-arrivals</option>
+                        <option value="best-selling-product">best-selling-product</option>
+                        <option value="browse-category">browse-category</option>
                     </select>
                     
 
@@ -83,30 +93,39 @@
             <th>Price</th>
             <th>Image</th>
             <th>Category</th>
+            <th>Description</th>
             <th>Update</th>
             <th>Delete</th>
             <th>Edit</th>
         </thead>
         
+        <!-- <td>$row[id]</td> -->
 
         <tbody>
             <?php
+            $i = 0;
                 $Record = mysqli_query($con, "SELECT * FROM `product`");
 
                while($row = mysqli_fetch_array($Record)) 
-
+{
                echo "
 
             <tr>
-                <td>$row[id]</td>
-                <td>$row[Pname]</td>
+                <td>"?> <?php echo ++$i ?> <?php echo"</td>
+                
+                <td><a href='../../BuyProduct.php?id={$row['id']}'>$row[Pname]</a></td>
                 <td>$row[Pprice]</td>
-                <td> <img src='$row[Pimage]'  height='90px' width='100px'> </td>
+                <td> <a href='../../BuyProduct.php?id={$row['id']}'><img src='$row[Pimage]'  height='90px' width='100px'> </a></td>
                 <td>$row[Category]</td>
-                <td></td>
+                <td>$row[Pdetail]</td>
+
+                <td><a href='update1.php? ID= $row[id]'>Update</a></td>
+                
+                <td><a href='delete.php? ID= $row[id]'>Delete</a></td>
             </tr>
 
                ";
+}
             ?>
         </tbody>
     </table>

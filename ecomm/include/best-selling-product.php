@@ -15,7 +15,7 @@
                             <div class='product'>
                                     <img src='admin/product/$row[Pimage]' alt='Guitar'>
                                 <h2>$row[Pname]</h2>
-                                    <p>Price: $row[Pprice]</p>  
+                                    <p> ";?> Price: Rs <?php echo number_format($row['Pprice'])?> <?php echo "</p>  
                         <form action = 'InsertCart.php' method = 'POST'>
                                                               
                                     <input type='hidden' name='Pquantity' value='1' min='1'>

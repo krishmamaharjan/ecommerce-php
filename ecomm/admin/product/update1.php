@@ -17,7 +17,7 @@
  $Record = mysqli_query($con, "SELECT * FROM `product` WHERE id = '$id' " );
     // var_dump($Record);
 $data = mysqli_fetch_array($Record);
-    var_dump($data);
+    // var_dump($data);
 
 
 

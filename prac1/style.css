@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fffaf0;
+    color: #333;
+}
+
+header {
+    background-color: #8b4513;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+nav {
+    background-color: #a0522d;
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+nav a:hover {
+    background-color: #6b4226;
+}
+.login{
+    float:right;
+    
+}
+.searchBar {
+    /* text-align: center; */
+    padding: 10px;
+    
+
+}
+
+.searchBar input {
+    width: 10%;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+.searchBar button {
+    padding: 2px;
+    /* padding: 10px 20px; */
+    background-color: #8b4513;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.searchBar button:hover {
+    background-color: #6b4226;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    background: #fdf5e6;
+    float: left;
+    width: 30%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.product h2 {
+    font-size: 20px;
+    color: #8b4513;
+}
+
+.product p {
+    color: #555;
+}
+
+/* .product button {
+    background-color: #a0522d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+} */
+
+.product button:hover {
+    background-color: #6b4226;
+}
+
+/* footer {
+    background-color: #8b4513;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+} */

@@ -28,9 +28,6 @@
 </head>
 <body>
 
-<!-- <br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br> -->
     
 
 <!-- <div class='container' id='shop'> -->
@@ -82,8 +79,15 @@
 
 <div class="section browse-by-category">
     <h3>Browse Categories</h3>
+    <?php
+        include 'include/browse-category.php';
+    ?>
 </div>
 
-
+<div>
+    <?php
+        include 'footer.php';
+    ?>
+</div>
 </body>
 </html>

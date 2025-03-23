@@ -86,6 +86,7 @@
     <h1>
         <?php
             echo number_format($Alltotal,2);
+            $_SESSION['all_total']=$Alltotal;
         ?>
     </h1>
 </div>
@@ -95,18 +96,17 @@
         <h2>Checkout Summary</h2>
         <p><strong>Total:</strong> NPR <?php echo number_format($Alltotal,2); ?></p>
 
-        <?php
-        echo    "
+       
                 <form action='stripe/checkout.php' method='post'>
                     <!-- <input class='btn' value='Buy Product' type='submit'> -->
-                    <input class='btn' value='$value[productName]' name = 'product_name' type='hidden'>
-                    <input class='btn' value='$value[productPrice]' name = 'product_price' type='hidden'>
-                    <input type='hidden' name='$value[productQuantity]' value=' ".(isset($_POST["productQuantity"]) ? $_POST["productQuantity"] : 1) ." '>
+                    <input class='btn' value='<?php echo isset($value["productName"]) ? $value["productName"] : ""; ?>' name = 'product_name' type='hidden'>
+                    <input class='btn' value='<?php echo isset($value["productPrice"]) ? $value["productPrice"] : ""; ?>' name = 'product_price' type='hidden'>
+                    <input type='hidden' name='product_quantity' value=' <?php echo isset($value["productQuantity"]) ? $value["productQuantity"] : 1 ;?>'>
             
                  <button type='submit' style='padding: 10px 20px; background-color: #a0522d; color: white; border: none; border-radius: 5px; cursor: pointer;'>Proceed to Checkout</button>
             </form>
-        ";
-        ?>
+        
+        
     </div>
 </div>
 </body>

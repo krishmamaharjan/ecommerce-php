@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="container">
+    <div class="signupform">
+    <form method="post" action="" class="form">
+    <!-- <fieldset> -->
+    <!-- <div class="signupform"> -->
+        Username <input type="text" value="" name="username" placeholder=" username" required><br><br>
+        Password <input type="password" value="" name="password" placeholder=" password" required><br><br>
+        Confirm Password <input type="password" value="" name="cpassword" placeholder=" confirm password" required><br><br>
+        Email <input type="email" value="" name="email" placeholder=" email@"><br><br>
+        <input type="submit" value="signup" name="submit"><br>
+    <!-- </div> -->
+    <!-- </fieldset> -->
+    </form>
+    </div>
+    </div>
+<!-- <?php
+// if($_SERVER["REQUEST_METHOD"] == "POST") {
+//     $username = $_POST['username'];
+//     $password = $_POST['password'];
+//     $cpassword = $_POST['cpassword'];
+//     $email = $_POST['email'];
+//     $errors = [];
+
+//     // Validate username
+//     if(empty($username)) {
+//         $errors[] = "Username is required.";
+//     } elseif (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
+//         $errors[] = "Username can only contain letters and numbers.";
+//     }
+//     elseif (strlen($username) < 4) {
+//         $errors[] = "Username should be of length atleast 4.";
+//         }
+//     elseif(' ')
+//     {
+//         $errors[] = "Username shoud not have whitespace";
+//     }
+
+//     // Validate password
+//     if(empty($password)) {
+//         $errors[] = "Password is required.";
+//     } 
+//     elseif (strlen($password) < 8) {
+//         $errors[] = "Password must be at least 8 characters.";
+//     }
+//     if($password != $cpassword)
+//     {
+//         $errors[] = "password does not match.";
+//     }
+
+
+// }
+?>
+</body>
+</html>
